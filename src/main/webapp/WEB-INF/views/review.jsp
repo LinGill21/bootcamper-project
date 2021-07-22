@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib  tagdir="/WEB-INF/tags" prefix="tag"%>
+<%@ taglib  tagdir="/WEB-INF/tags" prefix="navTag"%>
     <!DOCTYPE html>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <html>
@@ -24,7 +24,7 @@
         </head>
 
         <body>
-		<tag:tag/>
+		<navTag:navtag/>
             <div id="ReviewFormDiv" class="container">
                 <br>
                 <form name="submitReviewForm" method="POST" action="addReview">

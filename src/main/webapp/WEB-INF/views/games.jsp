@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib  tagdir="/WEB-INF/tags" prefix="tag"%>
+<%@ taglib  tagdir="/WEB-INF/tags" prefix="navTag"%>
     <!DOCTYPE html>
     <html>
 
@@ -27,7 +27,7 @@
     </head>
 
     <body ng-app="MGL_Task1_app" class="ng-cloak">
-		<tag:tag/>
+		<navTag:navtag/>
         <br>
         <div class="container" ng-controller="MGL_Task1_Controller as MGL_T1_ctrl">
             <div class="panel panel-default">

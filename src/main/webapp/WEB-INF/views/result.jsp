@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib  tagdir="/WEB-INF/tags" prefix="tag"%>
+<%@ taglib  tagdir="/WEB-INF/tags" prefix="navTag"%>
     <!DOCTYPE html>
     <html>
 
@@ -19,7 +19,7 @@
     </head>
 
     <body>
-       <tag:tag/>
+       <navTag:navtag/>
         <br>
         <h2 class="text-light">Submitted Review Information</h2>
         <table class="table table-dark text-light">

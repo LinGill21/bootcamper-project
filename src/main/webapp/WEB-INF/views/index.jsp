@@ -1,4 +1,4 @@
-<%@ taglib  tagdir="/WEB-INF/tags" prefix="tag"%>
+<%@ taglib  tagdir="/WEB-INF/tags" prefix="navTag"%>
 <html>
 
 <head>
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-   <tag:tag/>
+   <navTag:navtag/>
     <br>
     <div class="container">
         <div class="row">

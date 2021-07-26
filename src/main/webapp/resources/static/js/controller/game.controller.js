@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GameApp').controller('GameController',
-		[ 'Game_Service', function(GameService) {
+		[ 'GameService', function(GameService) {
 			var self = this;
 			self.game = {
 				id : '',

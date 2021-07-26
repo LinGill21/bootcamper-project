@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Gameapp').factory('GameService', ['$http', function($http) {
+angular.module('GameApp').factory('GameService', ['$http', function($http) {
 
 		var REST_SERVICE_URI = '';
 
@@ -24,5 +24,19 @@ angular.module('Gameapp').factory('GameService', ['$http', function($http) {
 				}
 			);
 		}
+		function findGameById(id) {
+			return $http.get(REST_SERVICE_URI + '/{id}', game).then(function(response) {
+					return response.data;
+				}
+			);
+		}
+		function  deleteGamesbyId(id) {
+			return $http.post(REST_SERVICE_URI + '/{id}', game).then(function(response) {
+					return response.data;
+				}
+			);
+		}
+		
+		
 
 }]);

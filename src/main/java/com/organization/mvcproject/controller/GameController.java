@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.organization.mvcproject.model.GameImpl;
-import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.model.Game;
 import com.organization.mvcproject.api.service.GameService;
 
 @RestController
@@ -27,7 +26,7 @@ public class GameController{
 	
 	@RequestMapping(value = "/games", method = RequestMethod.GET)
 	public ModelAndView game() {
-		return new ModelAndView("games", "command", new GameImpl());
+		return new ModelAndView("games", "command", new Game());
 	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)

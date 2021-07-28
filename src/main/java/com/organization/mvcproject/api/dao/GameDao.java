@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import com.organization.mvcproject.model.Game;
 
 public interface GameDao {
-	public List<Game> findAllGames();
-	public Game saveGame(Game game);
-	public Game findGameById(Long id);
+	List<Game> findAllGames();
+	Game saveGame(Game game);
+    Game findGameById(Long id);
 	boolean deleteGame(Long id);
 	List<Game> findGamesByGenre(String genre);
 }

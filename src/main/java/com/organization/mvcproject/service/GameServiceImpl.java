@@ -13,15 +13,15 @@ import com.organization.mvcproject.model.Game;
 public class GameServiceImpl implements GameService {
 	@Autowired
 	private GameDaoImpl mockdao;
-	
+	@Override
 	public List<Game> retrieveAllGames() {
 		return mockdao.findAllGames();
 	}
-
+	@Override
 	public Game findGameById(Long id)  {
 		return mockdao.findGameById(id);
 	}
-
+	@Override
 	public boolean deleteGame(Long  id) {
 		return mockdao.deleteGame(id);
 	}

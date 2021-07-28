@@ -39,14 +39,12 @@ public class GameController{
 		gameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/game/{id}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> findGameById(@PathVariable("id")long id) {
 		return new ResponseEntity<>(gameService.findGameById(id), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "/game/{id}/delete" )
 	public ResponseEntity<?> deleteGame(@PathVariable String id) {
-		//Game game = gameService.findGameById(Long.valueOf(id));
-		System.out.println("The id is "+ id);
 		if(id == null) {
 			 System.out.println("Unable to delete. Game with id " + id + " not found");
 	         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

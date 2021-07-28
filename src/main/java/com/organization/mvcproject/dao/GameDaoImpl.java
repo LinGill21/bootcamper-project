@@ -67,7 +67,6 @@ public class  GameDaoImpl{
 	}
 
 	public boolean deleteGame(Long id) {
-		System.out.println("in Dao");
 		Game gameRemoved =findGameById(id);
 		if(gameRemoved != null) {
 			try {

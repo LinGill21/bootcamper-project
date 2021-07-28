@@ -26,13 +26,13 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 			);
 		}
 		function findGameById(id) {
-			return $http.get(REST_SERVICE_URI + '/{id}', id).then(function(response) {
+			return $http.get(REST_SERVICE_URI + '/game/{id}', id).then(function(response) {
 					return response.data;
 				}
 			);
 		}
 		function  deleteGame(gameId) {
-			return $http.delete(REST_SERVICE_URI + gameId).then(function(response) {
+			return $http.delete(REST_SERVICE_URI + '/game/'+gameId+'/delete').then(function(response) {
 					return response.data;
 				}
 			);

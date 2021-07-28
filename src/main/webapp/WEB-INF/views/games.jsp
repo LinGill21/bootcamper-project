@@ -83,8 +83,8 @@
                             <tr ng-repeat="currentGame in ctrl.games">
                                 <td><span ng-bind="currentGame.name"></span></td>
                                 <td><span ng-bind="currentGame.genre"></span></td>
-                                <td>
-                                </td>
+                                <td><button data-ng-click="ctrl.deleteGame(currentGame)" type="button" class="btn btn-danger">Delete</button></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

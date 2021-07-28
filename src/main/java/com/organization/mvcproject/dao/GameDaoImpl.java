@@ -41,9 +41,7 @@ public class  GameDaoImpl{
 		return games;
 	}
 	public List<Game> findAllGames() {
-		//need to go in and fix the type conversion from game to GameImpl
 		return games;
-		//return new ArrayList<Game>();
 	}
 
 	
@@ -69,10 +67,11 @@ public class  GameDaoImpl{
 	}
 
 	public boolean deleteGame(Long id) {
+		System.out.println("in Dao");
 		Game gameRemoved =findGameById(id);
 		if(gameRemoved != null) {
 			try {
-			games.remove(gameRemoved);
+			games.removeIf(game-> id == game.getId());
 			return true;
 			}
 			catch(Error e){
@@ -84,10 +83,10 @@ public class  GameDaoImpl{
 
 	
 	public List<Game> findGamesByGenre(String genre) {
-        List<Game> returnedGames =  games.stream()  
+        return games.stream()  
                 .filter(g ->g.getGenre() == genre) 
                 .collect(Collectors.toList());  
-		return returnedGames;
+		
 	}
 	
 	

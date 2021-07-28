@@ -44,8 +44,14 @@ public class GameController{
 		return new ResponseEntity<>(gameService.findGameById(id), HttpStatus.OK);
 	}
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<?> deleteGamesbyId(@PathVariable("id")long id) {
-		return new ResponseEntity<>(gameService.deleteGame(id), HttpStatus.OK);
+	public ResponseEntity<?> deleteGame(@PathVariable String id) {
+		//Game game = gameService.findGameById(Long.valueOf(id));
+		System.out.println("The id is "+ id);
+		if(id == null) {
+			 System.out.println("Unable to delete. Game with id " + id + " not found");
+	         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(gameService.deleteGame(Long.valueOf(id)), HttpStatus.OK);
 	}
-
+	
 }

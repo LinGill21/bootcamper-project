@@ -1,9 +1,8 @@
 package com.organization.mvcproject.api.dao;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import com.organization.mvcproject.model.Game;
+
+import com.organization.mvcproject.api.model.Game;
 
 public interface GameDao {
 	List<Game> findAllGames();

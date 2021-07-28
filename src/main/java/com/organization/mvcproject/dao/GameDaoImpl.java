@@ -5,31 +5,34 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
-import com.organization.mvcproject.model.Game;
+
+import com.google.common.collect.ImmutableList;
+import com.organization.mvcproject.api.model.Game;
+import com.organization.mvcproject.model.GameImpl;
 @Repository("GameDaoImpl")
 public class  GameDaoImpl{
 
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
-	private static List<Game> games = new ArrayList<Game>();
+	private static List<GameImpl> games = new ArrayList<>();
 
 	static {
 		games = populateGames();
 	}
 
-	private static List<Game> populateGames() {
+	private static List<GameImpl> populateGames() {
 
-		Game game1 = new Game();
+		GameImpl game1 = new GameImpl();
 		game1.setId(++gameId);
 		game1.setGenre("Sport");
 		game1.setName("Rocket League");
 
-		Game game2 = new Game();
+		GameImpl game2 = new GameImpl();
 		game2.setId(++gameId);
 		game2.setGenre("Shooter");
 		game2.setName("Halo 3");
 
-		Game game3 = new Game();
+		GameImpl game3 = new GameImpl();
 		game3.setId(++gameId);
 		game3.setGenre("MMORPG");
 		game3.setName("Runescape");
@@ -41,7 +44,7 @@ public class  GameDaoImpl{
 		return games;
 	}
 	public List<Game> findAllGames() {
-		return games;
+		return ImmutableList.copyOf(games);
 	}
 
 	
@@ -51,7 +54,7 @@ public class  GameDaoImpl{
 		}
 		else {
 			 game.setId(++gameId);
-		     games.add((Game) game);
+		     games.add((GameImpl) game);
 		     return game; 
 		}
 	}
@@ -63,7 +66,7 @@ public class  GameDaoImpl{
 				return game;
 			}
 		}
-		return new Game();
+		return null;
 	}
 
 	public boolean deleteGame(Long id) {

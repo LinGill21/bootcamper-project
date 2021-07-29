@@ -36,7 +36,7 @@ public class GameController{
 	}
 
 	@RequestMapping(value = "/createGame", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Void> createGame(@RequestBody Game game) {
+	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {
 		gameService.saveGame(game);
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}

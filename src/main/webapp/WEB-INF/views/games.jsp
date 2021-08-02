@@ -63,7 +63,7 @@
                             <div class="form-actions floatRight">
                                 <input data-ng-if ="!ctrl.game.id" type="submit" value="Add" class="btn btn-primary btn-sm">
                                 <button data-ng-if ="ctrl.game.id" type="submit" class="btn btn-primary btn-sm">Update</button>
-                                <button data-ng-if="ctrl.game" type="reset" class="btn btn-secondary btn-sm">Clear</button>
+                                <button data-ng-if="ctrl.game" type="reset" class="btn btn-secondary btn-sm" data-ng-click="ctrl.clearGame()">Clear</button>
                             </div>
                         </div>
                     </form>

@@ -20,13 +20,14 @@ angular.module('GameApp').controller('GameController',
 				if(!self.game.id){
 					return GameService.createGame(self.game).then( function() {
 						self.fetchAllGames();
+						self.game = {};
 					});
 				}else{
 					return GameService.updateGame(self.game).then( function() {
 						self.fetchAllGames();
+						self.game = {};
 					});
 				}
-				self.game = {};
 			}
 			
 			self.deleteGame = function(game){
@@ -36,6 +37,9 @@ angular.module('GameApp').controller('GameController',
 			}
 			self.updateGame = function(game){
 				self.game= angular.copy(game);
+			}
+			self.clearGame= function(){
+				self.game={};
 			}
 
 			self.fetchAllGames();

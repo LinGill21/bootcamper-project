@@ -49,7 +49,7 @@ public class  GameDaoImpl{
 
 	
 	public Game saveGame(Game game) {
-		if(game.getId() != null) {
+		if(game.getId() != null) {//look for game in  array then update the game in the array.
 			return findGameById(game.getId());
 		}
 		else {

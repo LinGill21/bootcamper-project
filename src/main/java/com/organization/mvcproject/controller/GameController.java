@@ -52,5 +52,8 @@ public class GameController{
 		}
 		return new ResponseEntity<>(gameService.deleteGame(Long.valueOf(id)), HttpStatus.OK);
 	}
-	
+	@RequestMapping(value = "/game/{id}/update", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> updateGame(@PathVariable("id") long id,@RequestBody GameImpl game) {
+		return new ResponseEntity<>(gameService.saveGame(game), HttpStatus.OK);
+	}
 }

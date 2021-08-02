@@ -50,6 +50,13 @@ public class  GameDaoImpl{
 	
 	public Game saveGame(Game game) {
 		if(game.getId() != null) {//look for game in  array then update the game in the array.
+			for(int i =0;i<games.size();i++) {
+				if(game.getId().equals(games.get(i).getId())) {
+					games.get(i).setName(game.getName());
+					games.get(i).setGenre(game.getGenre());
+				    return game;
+				}
+			}
 			return findGameById(game.getId());
 		}
 		else {

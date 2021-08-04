@@ -29,5 +29,8 @@ public class GameServiceImpl implements GameService {
 	public Game saveGame(Game game) {
 		return mockdao.saveGame(game);
 	}
+	public List<Game> retrieveGamesByGenre(String genre){
+		return mockdao.findGamesByGenre(genre);
+	}
 
 }

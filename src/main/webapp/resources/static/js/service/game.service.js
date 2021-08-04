@@ -8,7 +8,8 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 			fetchAllGames : fetchAllGames,
 			createGame : createGame,
 			deleteGame :deleteGame,
-			updateGame: updateGame
+			updateGame: updateGame,
+			filterByGenre:filterByGenre
 		};
 
 		return factory;
@@ -43,6 +44,11 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 					return response.data;
 				}
 			);
+		}
+		function filterByGenre(genreName){
+			return $http.get(REST_SERVICE_URI, {params: {genre: genreName}}).then(function(response){
+				return response.data;
+			})
 		}
 		
 		

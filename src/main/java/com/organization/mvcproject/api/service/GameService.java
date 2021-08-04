@@ -9,5 +9,5 @@ public interface GameService {
 	Game findGameById(Long id); 
 	boolean deleteGame(Long  id);
 	Game saveGame(Game game);
-
+	List<Game> retrieveGamesByGenre(String genre);
 }

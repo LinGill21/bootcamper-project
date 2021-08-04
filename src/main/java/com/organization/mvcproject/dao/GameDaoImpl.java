@@ -92,9 +92,12 @@ public class  GameDaoImpl{
 
 	
 	public List<Game> findGamesByGenre(String genre) {
-        return games.stream()  
+        List<Game> returnedGames =  games.stream()  
                 .filter(g ->g.getGenre() == genre) 
-                .collect(Collectors.toList());  
+                .collect(Collectors.toList());
+        System.out.println("In MockDAO");
+        System.out.println(returnedGames);
+		return returnedGames; 
 		
 	}
 	

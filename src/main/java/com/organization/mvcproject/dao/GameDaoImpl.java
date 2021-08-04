@@ -93,8 +93,8 @@ public class  GameDaoImpl{
 	
 	public List<Game> findGamesByGenre(String genre) {
         return games.stream()  
-                .filter(g ->g.getGenre() == genre) 
-                .collect(Collectors.toList());  
+                .filter(game -> genre.equals(game.getGenre()))
+                .collect(Collectors.toList());
 		
 	}
 	

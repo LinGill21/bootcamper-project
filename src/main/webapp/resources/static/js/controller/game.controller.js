@@ -9,14 +9,22 @@ angular.module('GameApp').controller('GameController',
 				genre : ''
 			};
 			self.games = [];
-			self.genres = [{name: 'All'}]; 
-			self.selectedGenre = '';
+			self.genres = ["All"]; 
+			self.selectedGenre = "All";
 			
 			self.fetchAllGames = function(){
-				GameService.fetchAllGames().then(function(data) {
-					self.games = data;
-					self.genres =generateGenreList();
-				});
+					if(self.selectedGenre != "All"){
+						return GameService.filterByGenre(self.selectedGenre).then( function(genreList) {
+							self.games = genreList;
+						});
+					}
+					else{
+						GameService.fetchAllGames().then(function(data) {
+						self.games = data;
+						self.genres =generateGenreList();
+					});
+				}	
+				
 			}
 
 			self.addGame = function(){
@@ -46,6 +54,7 @@ angular.module('GameApp').controller('GameController',
 			}
 			function generateGenreList (){
 				let genreSet = new Set();
+				genreSet.add("All");
 				for (let i = 0; i < self.games.length; i++) {
   					genreSet.add (self.games[i].genre);
 				}

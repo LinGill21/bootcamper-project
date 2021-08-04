@@ -33,12 +33,9 @@ public class GameController{
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public ResponseEntity<List<Game>> fetchAllGames(@RequestParam(required = false) String genre) {
-		System.out.println(genre);
 		if(genre != null) {
-			System.out.println("In genre not null getAll");
 			return new ResponseEntity<List<Game>>(gameService.retrieveGamesByGenre(genre), HttpStatus.OK);
 		}
-		System.out.println("In else GetAll");
 		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
 

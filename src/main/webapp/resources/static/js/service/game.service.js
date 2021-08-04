@@ -46,7 +46,7 @@ angular.module('GameApp').factory('GameService', ['$http', function($http) {
 			);
 		}
 		function filterByGenre(genreName){
-			return $http.get(REST_SERVICE_URI, {params: {genre: genreName}}).then(function(response){
+			return $http.get(REST_SERVICE_URI+'getAll', {params: {genre:genreName}}).then(function(response){
 				return response.data;
 			})
 		}

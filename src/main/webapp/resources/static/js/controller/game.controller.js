@@ -9,10 +9,13 @@ angular.module('GameApp').controller('GameController',
 				genre : ''
 			};
 			self.games = [];
-
+			self.genres = [{name: 'All'}]; 
+			self.selectedGenre = '';
+			
 			self.fetchAllGames = function(){
 				GameService.fetchAllGames().then(function(data) {
 					self.games = data;
+					self.genres =generateGenreList();
 				});
 			}
 
@@ -41,6 +44,12 @@ angular.module('GameApp').controller('GameController',
 			self.clearGame= function(){
 				self.game={};
 			}
-
+			function generateGenreList (){
+				let genreSet = new Set();
+				for (let i = 0; i < self.games.length; i++) {
+  					genreSet.add (self.games[i].genre);
+				}
+				return Array.from(genreSet);
+			}
 			self.fetchAllGames();
 		} ]);

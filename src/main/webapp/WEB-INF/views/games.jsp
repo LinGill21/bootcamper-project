@@ -72,6 +72,10 @@
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading text-light"><span class="lead">List of all current games</span></div>
+                   <select data-ng-options="genre for genre in ctrl.genres" 
+        					data-ng-model="ctrl.selectedGenre"
+        					data-ng-change="ctrl.fetchAllGames()">
+					</select>
                 <div class="tablecontainer">
                     <table class="table table-dark table-striped text-light">
                         <thead>
